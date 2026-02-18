@@ -16,7 +16,7 @@ import catch4 from '../imgs/catch4.png';
 
 const Home = () => {
   return (
-    <div className='background'>
+    <div>
       <section className='home-section1'>
         <p className='regular-black'>Hi, I’m Nadine</p>
         <div className='home-section1-right'>

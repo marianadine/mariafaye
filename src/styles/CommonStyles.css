@@ -17,9 +17,26 @@
     font-size: 24px;
 }
 
+.semibold-title {
+    font-weight: 600;
+    font-size: 24px;
+}
+
 .regular {
     font-weight: 400;
     font-size: 14px;
+}
+
+.regular-subtitle {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.semibold-sectiontitle {
+    font-weight: 600;
+    font-size: 14px;
+    color: #FAD0DE;
+    margin-bottom: 10px;
 }
 
 /* RESPONSIVENESS */
@@ -39,7 +56,19 @@
         font-size: 12px;
     }
 
+    .semibold-title {
+        font-size: 15px;
+    }
+
     .regular {
         font-size: 14px;
+    }
+
+    .regular-subtitle {
+        font-size: 12px;
+    }
+
+    .semibold-sectiontitle {
+        font-size: 12px;
     }
 }

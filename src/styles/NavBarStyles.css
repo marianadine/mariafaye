@@ -8,13 +8,13 @@
     justify-content: flex-end;
     align-items: center;
     z-index: 1000;
-    /* backdrop-filter: blur(5px); */
+    backdrop-filter: blur(5px);
 }
 
 .navbar-links li a,
 .navbar-links-mobile li a {
     text-decoration: none;
-    color: #121212;
+    color: #FAD0DE;
     font-weight: 400;
     transition: color 0.3s ease-in;
 }
@@ -37,6 +37,16 @@
 .navbar-links-mobile li a.active {
     font-weight: 600;
     text-decoration: underline;
+    color: #FAD0DE;
+}
+
+body.home-section1-active .navbar-links li a,
+body.home-section1-active .navbar-links-mobile li a {
+    color: #121212;
+}
+
+body.home-section1-active .navbar-links li a.active,
+body.home-section1-active .navbar-links-mobile li a.active {
     color: #121212;
 }
 
@@ -44,6 +54,10 @@
     display: none;
     font-size: 24px;
     cursor: pointer;
+    color: #FAD0DE;
+}
+
+body.home-section1-active .mobile-menu-icon {
     color: #121212;
 }
 

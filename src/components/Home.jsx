@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import '../styles/CommonStyles.css';
 import '../styles/HomeStyles.css';
 
@@ -15,9 +15,34 @@ import catch3 from '../imgs/catch3.png';
 import catch4 from '../imgs/catch4.png';
 
 const Home = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          document.body.classList.add('home-section1-active');
+        } else {
+          document.body.classList.remove('home-section1-active');
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove('home-section1-active');
+    };
+  }, []);
+
   return (
     <div>
-      <section className='home-section1'>
+      <section className='home-section1' ref={sectionRef}>
         <p className='regular-black'>Hi, I’m Nadine</p>
         <div className='home-section1-right'>
           <h1 className='semibold-black'>— an aspiring UI/UX Designer with a passion for clean design and smooth user experiences.</h1>

@@ -1,15 +1,25 @@
 .home-section1 {
     background-color: #FAD0DE;
-    padding: 100px 200px;
+    padding: 125px 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .home-section1-right {
     width: 40%;
     text-align: right;
+}
+
+.homesection2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    max-width: 100%;
+    height: auto;
 }
 
 /* RESPONSIVENESS */
@@ -30,5 +40,14 @@
     .home-section1-right {
         width: 100%;
         text-align: left;
+    }
+
+    .homesection2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 90px;
+        max-width: 80%;
+        height: auto;
     }
 }

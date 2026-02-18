@@ -1,3 +1,16 @@
+/* TEXT STYLES BLACK */
+.semibold-black {
+    font-weight: 600;
+    font-size: 24px;
+    color: #121212;
+}
+
+.regular-black {
+    font-weight: 400;
+    font-size: 14px;
+    color: #121212;
+}
+
 /* TEXT STYLES */
 .semibold {
     font-weight: 600;
@@ -7,4 +20,26 @@
 .regular {
     font-weight: 400;
     font-size: 14px;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    /* TEXT STYLES BLACK */
+    .semibold-black {
+        font-size: 18px;
+    }
+
+    .regular-black {
+        font-size: 14px;
+    }
+
+    /* TEXT STYLES */
+    .semibold {
+        font-size: 12px;
+    }
+
+    .regular {
+        font-size: 14px;
+    }
 }

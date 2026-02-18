@@ -1,0 +1,34 @@
+.home-section1 {
+    background-color: #FAD0DE;
+    padding: 100px 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-section1-right {
+    width: 40%;
+    text-align: right;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .home-section1 {
+        padding: 80px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-section1 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px 50px;
+        gap: 40px;
+    }
+
+    .home-section1-right {
+        width: 100%;
+        text-align: left;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MenuOutlined, CloseOutlined } from '@ant-design/icons'; // Icons for the toggle
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import '../styles/NavBarStyles.css';
 
 const Navbar = () => {

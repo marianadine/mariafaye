@@ -1,0 +1,10 @@
+/* TEXT STYLES */
+.semibold {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.regular {
+    font-weight: 400;
+    font-size: 14px;
+}

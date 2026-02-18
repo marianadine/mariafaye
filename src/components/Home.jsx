@@ -1,12 +1,18 @@
 import React from 'react'
 import '../styles/CommonStyles.css';
 import '../styles/HomeStyles.css';
+
 import homesection2 from '../imgs/home-section2.png';
 import homesection3 from '../imgs/home-section3.png';
+
 import kmcbook from '../imgs/kmcbook.png';
 import jpcsbook from '../imgs/jpcsbook.png';
 import umakbook from '../imgs/umakbook.png';
 
+import catch1 from '../imgs/catch1.png';
+import catch2 from '../imgs/catch2.png';
+import catch3 from '../imgs/catch3.png';
+import catch4 from '../imgs/catch4.png';
 
 const Home = () => {
   return (
@@ -49,6 +55,25 @@ const Home = () => {
             <img className='homesection4' src={umakbook} alt="UMak Book" />
           </a>
         </div>
+      </section>
+
+      <section className='home-section5'>
+
+      </section>
+
+      <section className='home-section6'>
+        <p className='semibold-sectiontitle'>you can catch me</p>
+        <div className='home-section6-likes'>
+          <img className='home-section6-img' src={catch1} />
+          <img className='home-section6-img' src={catch2} />
+          <img className='home-section6-img' src={catch3} />
+          <img className='home-section6-img' src={catch4} />
+        </div>
+      </section>
+
+      <section className='footer'>
+        <p className='cursive'>maria nadine faye rufo</p>
+        <p className='semibold-footer'>thank u for scrolling bestie!</p>
       </section>
     </div>
   )

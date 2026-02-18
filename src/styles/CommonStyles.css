@@ -22,6 +22,18 @@
     font-size: 24px;
 }
 
+.semibold-footer {
+    font-weight: 600;
+    font-size: 14px;
+    color: #FAD0DE;
+}
+
+.cursive {
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 24px;
+    color: #FAD0DE;
+}
+
 .regular {
     font-weight: 400;
     font-size: 14px;
@@ -58,6 +70,14 @@
 
     .semibold-title {
         font-size: 15px;
+    }
+
+    .semibold-footer {
+        font-size: 8px;
+    }
+
+    .cursive {
+        font-size: 14px;
     }
 
     .regular {

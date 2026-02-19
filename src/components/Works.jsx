@@ -33,26 +33,26 @@ import solarsphere from '../imgs/solarsphere.png';
 import uniqlo from '../imgs/uniqlo.png';
 
 const projectsData = [
-  { id: 1, img: cocofw, name: 'Coco FW', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 2, img: clickdbyfei, name: 'Click D By Fei', tech: 'Figma & CSS', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 3, img: bestdressed, name: 'Best Dressed', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 4, img: cupid404, name: 'Cupid 404', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 5, img: esphere, name: 'ESphere', tech: 'Fullstack Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 6, img: jpcs, name: 'JPCS', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 7, img: madebyfei, name: 'Made By Fei', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 8, img: maisonsucre, name: 'Maison Sucre', tech: 'Figma & CSS', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 9, img: numoabe, name: 'NuMoAbe', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 10, img: pcare, name: 'Pawsitive Care', tech: 'Fullstack Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 11, img: solarsphere, name: 'SolarSphere', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 12, img: uniqlo, name: 'Uniqlo', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' }
+  { id: 1, img: cocofw, name: 'Coco Fashion Week Digital Invitation', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 2, img: clickdbyfei, name: 'Clickd By Fei | Online Photobooth', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 3, img: bestdressed, name: 'Best Dressed Voting System', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 4, img: cupid404, name: 'Cupid 404 Confession', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 5, img: esphere, name: 'ExploreSphere', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 6, img: jpcs, name: 'JPCS NU MOA Chapter', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 7, img: madebyfei, name: 'Made By Fei | Portfolio 2025', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 8, img: maisonsucre, name: 'Maison Sucre', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 9, img: numoabe, name: 'NU MOA Bulldogs Exchange', tech: 'Full Stack Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 10, img: pcare, name: 'Pawsitive Care', tech: 'Full Stack Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 11, img: solarsphere, name: 'SolarSphere | Capstone', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 12, img: uniqlo, name: 'Uniqlo Inventory System', tech: 'Full Stack Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' }
 ];
 
 const Works = () => {
-  const [sortOrder, setSortOrder] = useState('newest');
+  const [sortOrder, setSortOrder] = useState('Newest');
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [showFilterDropdown, setShowFilterDropdown] = useState(false);
 
-  const filters = ['UI/UX Design', 'Frontend Development', 'Fullstack Design'];
+  const filters = ['UI/UX Design', 'Front End Development', 'Full Stack Development'];
 
   const filteredAndSorted = useMemo(() => {
     let result = [...projectsData];
@@ -73,7 +73,7 @@ const Works = () => {
   }, [sortOrder, selectedFilter]);
 
   const handleSortToggle = () => {
-    setSortOrder(sortOrder === 'newest' ? 'oldest' : 'newest');
+    setSortOrder(sortOrder === 'Newest' ? 'Oldest' : 'Newest');
   };
 
   const handleFilterSelect = (filter) => {

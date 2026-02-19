@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { CaretDownOutlined, ClockCircleOutlined } from '@ant-design/icons'
+import { CaretDownOutlined, ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
 
 import '../styles/CommonStyles.css';
 import '../styles/WorkStyles.css';
@@ -33,22 +33,24 @@ import solarsphere from '../imgs/solarsphere.png';
 import uniqlo from '../imgs/uniqlo.png';
 
 const projectsData = [
-  { id: 1, img: cocofw, name: 'Coco Fashion Week Digital Invitation', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 2, img: clickdbyfei, name: 'Clickd By Fei | Online Photobooth', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 3, img: bestdressed, name: 'Best Dressed Voting System', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 4, img: cupid404, name: 'Cupid 404 Confession', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 5, img: esphere, name: 'ExploreSphere', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 6, img: jpcs, name: 'JPCS NU MOA Chapter', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 7, img: madebyfei, name: 'Made By Fei | Portfolio 2025', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 8, img: maisonsucre, name: 'Maison Sucre', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 9, img: numoabe, name: 'NU MOA Bulldogs Exchange', tech: 'Full Stack Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 10, img: pcare, name: 'Pawsitive Care', tech: 'Full Stack Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 11, img: solarsphere, name: 'SolarSphere | Capstone', tech: 'Front End Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
-  { id: 12, img: uniqlo, name: 'Uniqlo Inventory System', tech: 'Full Stack Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' }
+  { id: 1, img: solarsphere, name: 'SolarSphere | Capstone', tech: 'Front End Development', desc: 'An interactive platform for tracking solar energy systems and environmental impact with real-time data visualization and insights.' },
+  { id: 2, img: madebyfei, name: 'Made By Fei | Portfolio 2025', tech: 'Front End Development', desc: 'A modern, minimalist portfolio website showcasing design work and creative projects with smooth animations and responsive design.' },
+  { id: 3, img: clickdbyfei, name: 'Clickd By Fei | Online Photobooth', tech: 'Front End Development', desc: 'A digital photobooth application allowing users to capture, edit, and share fun moments with custom filters and effects.' },
+  { id: 4, img: maisonsucre, name: 'Maison Sucre', tech: 'Front End Development', desc: 'An elegant e-commerce platform for a bakery brand featuring product showcases, ordering system, and customer engagement features.' },
+  { id: 5, img: esphere, name: 'ExploreSphere', tech: 'Front End Development', desc: 'A travel discovery platform connecting users with unique destinations, local experiences, and personalized travel recommendations.' },
+  { id: 6, img: pcare, name: 'Pawsitive Care', tech: 'Full Stack Development', desc: 'A comprehensive pet care management system with appointment scheduling, health tracking, and community features for pet owners.' },
+  { id: 7, img: numoabe, name: 'NU MOA Bulldogs Exchange', tech: 'Full Stack Development', desc: 'An internal marketplace platform for students to buy, sell, and exchange items within the university community.' },
+  { id: 8, img: cocofw, name: 'Coco Fashion Week Digital Invitation', tech: 'UI/UX Design', desc: 'An interactive digital invitation experience for a fashion week event with dynamic animations and elegant brand storytelling.' },
+  { id: 9, img: cupid404, name: 'Cupid 404 Confession', tech: 'UI/UX Design', desc: 'A playful confession platform with a 404 error theme, allowing users to anonymously share thoughts and connect with others.' },
+  { id: 10, img: bestdressed, name: 'Best Dressed Voting System', tech: 'UI/UX Design', desc: 'A voting application for fashion events where users can rate and vote for their favorite fashion moments and styles.' },
+  { id: 11, img: jpcs, name: 'JPCS NU MOA Chapter', tech: 'UI/UX Design', desc: 'An organizational website for a university honor society featuring member profiles, events, and community initiatives.' },
+  { id: 12, img: ars, name: 'EcoAir', tech: 'Front End Development', desc: 'An environmental awareness app tracking air quality data and providing personalized health recommendations based on location.' },
+  { id: 13, img: uniqlo, name: 'Uniqlo Inventory System', tech: 'Full Stack Development', desc: 'A robust inventory management system designed for retail stores with real-time stock tracking and analytics.' },
+  { id: 14, img: atm, name: 'Money Mauve', tech: 'UI/UX Design', desc: 'A modern financial dashboard concept with intuitive visualizations of spending habits and investment portfolio tracking.' }
 ];
 
 const Works = () => {
-  const [sortOrder, setSortOrder] = useState('Newest');
+  const [sortOrder, setSortOrder] = useState('Oldest');
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [showFilterDropdown, setShowFilterDropdown] = useState(false);
 
@@ -63,7 +65,7 @@ const Works = () => {
     }
 
     // Sort by date
-    if (sortOrder === 'newest') {
+    if (sortOrder === 'Newest') {
       result.sort((a, b) => b.id - a.id);
     } else {
       result.sort((a, b) => a.id - b.id);
@@ -137,7 +139,11 @@ const Works = () => {
         <div className='buttons-container'>
           <div className='sort-button-wrapper'>
             <button className='toggle-button' onClick={handleSortToggle}>
-              <ClockCircleOutlined style={{ marginRight: '8px' }} />
+              {sortOrder === 'Newest' ? (
+                <ArrowDownOutlined style={{ marginRight: '8px' }} />
+              ) : (
+                <ArrowUpOutlined style={{ marginRight: '8px' }} />
+              )}
               {sortOrder}
             </button>
           </div>

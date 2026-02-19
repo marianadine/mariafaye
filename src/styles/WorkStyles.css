@@ -1,12 +1,12 @@
 .work-section1 {
     padding: 160px 200px;
-    margin-bottom: -200px;
+    margin-bottom: -150px;
     color: #FAD0DE;
 }
 
 .work-section2 {
     text-align: center;
-    padding: 125px 200px;
+    padding: 80px 200px;
 }
 
 .tech-section {
@@ -38,7 +38,7 @@
 
 .work-section3 {
     text-align: justify;
-    padding: 125px 200px;
+    padding: 80px 200px;
 }
 
 .buttons-container {
@@ -245,7 +245,7 @@
 
     .work-section3 {
         text-align: justify;
-        padding: 125px 20px;
+        padding: 50px 20px;
     }
 
     .project-grid-container {

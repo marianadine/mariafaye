@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { CaretDownOutlined, ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
 
 import '../styles/CommonStyles.css';
@@ -55,6 +55,17 @@ const Works = () => {
   const [showFilterDropdown, setShowFilterDropdown] = useState(false);
 
   const filters = ['UI/UX Design', 'Front End Development', 'Full Stack Development'];
+
+  useEffect(() => {
+    if (window.location.hash === '#brain-dump') {
+      const element = document.getElementById('brain-dump');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, []);
 
   const filteredAndSorted = useMemo(() => {
     let result = [...projectsData];
@@ -133,7 +144,7 @@ const Works = () => {
         </div>
       </section>
 
-      <section className='work-section3'>
+      <section className='work-section3' id='brain-dump'>
         <p className='semibold-sectiontitle' style={{ textAlign: 'center' }}>brain dump</p>
 
         <div className='buttons-container'>

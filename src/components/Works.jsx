@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
+import { CaretDownOutlined, ClockCircleOutlined } from '@ant-design/icons'
 
 import '../styles/CommonStyles.css';
 import '../styles/WorkStyles.css';
@@ -16,7 +17,70 @@ import css from '../imgs/css.png';
 import js from '../imgs/js.png';
 import java from '../imgs/java.png';
 
+import ars from '../imgs/ars.png';
+import atm from '../imgs/atm.png';
+import bestdressed from '../imgs/bestdressed.png';
+import clickdbyfei from '../imgs/clickdbyfei.png';
+import cocofw from '../imgs/cocofw.png';
+import cupid404 from '../imgs/cupid404.png';
+import esphere from '../imgs/esphere.png';
+import jpcs from '../imgs/jpcs.png';
+import madebyfei from '../imgs/madebyfei.png';
+import maisonsucre from '../imgs/maisonsucre.png';
+import numoabe from '../imgs/numoabe.png';
+import pcare from '../imgs/pcare.png';
+import solarsphere from '../imgs/solarsphere.png';
+import uniqlo from '../imgs/uniqlo.png';
+
+const projectsData = [
+  { id: 1, img: cocofw, name: 'Coco FW', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 2, img: clickdbyfei, name: 'Click D By Fei', tech: 'Figma & CSS', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 3, img: bestdressed, name: 'Best Dressed', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 4, img: cupid404, name: 'Cupid 404', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 5, img: esphere, name: 'ESphere', tech: 'Fullstack Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 6, img: jpcs, name: 'JPCS', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 7, img: madebyfei, name: 'Made By Fei', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 8, img: maisonsucre, name: 'Maison Sucre', tech: 'Figma & CSS', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 9, img: numoabe, name: 'NuMoAbe', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 10, img: pcare, name: 'Pawsitive Care', tech: 'Fullstack Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 11, img: solarsphere, name: 'SolarSphere', tech: 'UI/UX Design', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' },
+  { id: 12, img: uniqlo, name: 'Uniqlo', tech: 'Frontend Development', desc: 'for modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly accessible' }
+];
+
 const Works = () => {
+  const [sortOrder, setSortOrder] = useState('newest');
+  const [selectedFilter, setSelectedFilter] = useState(null);
+  const [showFilterDropdown, setShowFilterDropdown] = useState(false);
+
+  const filters = ['UI/UX Design', 'Frontend Development', 'Fullstack Design'];
+
+  const filteredAndSorted = useMemo(() => {
+    let result = [...projectsData];
+
+    // Filter by category
+    if (selectedFilter) {
+      result = result.filter((project) => project.tech.includes(selectedFilter));
+    }
+
+    // Sort by date
+    if (sortOrder === 'newest') {
+      result.sort((a, b) => b.id - a.id);
+    } else {
+      result.sort((a, b) => a.id - b.id);
+    }
+
+    return result;
+  }, [sortOrder, selectedFilter]);
+
+  const handleSortToggle = () => {
+    setSortOrder(sortOrder === 'newest' ? 'oldest' : 'newest');
+  };
+
+  const handleFilterSelect = (filter) => {
+    setSelectedFilter(selectedFilter === filter ? null : filter);
+    setShowFilterDropdown(false);
+  };
+
   return (
     <div>
       <section className='work-section1'>
@@ -27,7 +91,7 @@ const Works = () => {
       <section className='work-section2'>
         <p className='semibold-sectiontitle'>what’s in my bag</p>
         <p className='regular-subtitle'>a curated collection of the tools I live in — no fluff, just the essentials</p>
-        
+
         <div className='tech-grid-container'>
           <div className='tech-section'>
             <p className='semibold-sectiontitle' style={{ color: '#f2f2f2' }}>design & editing</p>
@@ -64,6 +128,66 @@ const Works = () => {
               <img className='techstack' src={react} />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className='work-section3'>
+        <p className='semibold-sectiontitle' style={{ textAlign: 'center' }}>brain dump</p>
+
+        <div className='buttons-container'>
+          <div className='sort-button-wrapper'>
+            <button className='toggle-button' onClick={handleSortToggle}>
+              <ClockCircleOutlined style={{ marginRight: '8px' }} />
+              {sortOrder}
+            </button>
+          </div>
+
+          {/* Desktop filter buttons */}
+          <div className='filter-buttons-desktop'>
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                className={`button ${selectedFilter === filter ? 'active' : ''}`}
+                onClick={() => handleFilterSelect(filter)}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile filter dropdown */}
+          <div className='filter-dropdown-mobile'>
+            <button
+              className='filter-toggle-button'
+              onClick={() => setShowFilterDropdown(!showFilterDropdown)}
+            >
+              Filters <CaretDownOutlined style={{ marginLeft: '6px' }} />
+            </button>
+            {showFilterDropdown && (
+              <div className='dropdown-menu'>
+                {filters.map((filter) => (
+                  <button
+                    key={filter}
+                    className={`dropdown-item ${selectedFilter === filter ? 'active' : ''}`}
+                    onClick={() => handleFilterSelect(filter)}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className='project-grid-container'>
+          {filteredAndSorted.map((project) => (
+            <div key={project.id} className='project-card'>
+              <img className='project-image' src={project.img} alt={project.name} />
+              <h3 className='project-name'>{project.name}</h3>
+              <p className='project-tech'>{project.tech}</p>
+              <p className='project-desc'>{project.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 

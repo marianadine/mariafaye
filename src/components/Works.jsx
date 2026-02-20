@@ -70,12 +70,10 @@ const Works = () => {
   const filteredAndSorted = useMemo(() => {
     let result = [...projectsData];
 
-    // Filter by category
     if (selectedFilter) {
       result = result.filter((project) => project.tech.includes(selectedFilter));
     }
 
-    // Sort by date
     if (sortOrder === 'Newest') {
       result.sort((a, b) => b.id - a.id);
     } else {
@@ -159,7 +157,6 @@ const Works = () => {
             </button>
           </div>
 
-          {/* Desktop filter buttons */}
           <div className='filter-buttons-desktop'>
             {filters.map((filter) => (
               <button
@@ -172,7 +169,6 @@ const Works = () => {
             ))}
           </div>
 
-          {/* Mobile filter dropdown */}
           <div className='filter-dropdown-mobile'>
             <button
               className='filter-toggle-button'
